@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Watermark Generator</title>
+  </head>
+  <body>
+   
+
+   <div class="container " style="margin-top:30px;" >
+
+    {% comment %} {% for image in myimage %} {% endcomment %}
+    <div class="card mb-3 m-auto text-center" >
+  {% comment %} <img class="card-img-top" src="media/converted/media/pexels_watermarked.png" alt="Image"> {% endcomment %}
+  <img class="card-img-top" src="{{content.user_image.url}}" alt="Image">
+  <div class="card-body">
+    {% comment %} <h5 class="card-title">Card title</h5> {% endcomment %}
+    <p class="card-text">You can download your watermarked image here</p>
+    {% comment %} <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> {% endcomment %}
+    <a href="/media/compressed/{{imagename}}" class="btn btn-primary" 
+    download="/media/compressed/{{imagename}}" >Download</a> 
+
+    <a href="/" class="btn btn-primary" >{{ imagename }}Back</a>
+
+    {% comment %} <form action="{% url 'downloader_url' image.my_id %}" method="post">
+    {% csrf_token %}
+    <button class="btn btn-primary"  download="media/converted/media/{{ imagename }}" >Download 2</button>
+    </form> {% endcomment %}
+  </div>
+  </div>
+  {% comment %} {% endfor %} {% endcomment %}
+
+</div>
+
+{% comment %} <img class="card-img-top" src="media/pexels.jpg" alt="Image"> {% endcomment %}
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
